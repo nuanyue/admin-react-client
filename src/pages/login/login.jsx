@@ -4,6 +4,7 @@ import './login.less'
 //图片不能直接在src中写了，要引入模块
 import logo from './images/logo.png'
 import { Layout, Card, Col, Row, Form, Icon, Input, Button } from 'antd';
+import { login } from "../../api";
 const { Header, Footer, Content } = Layout;
 
 class Login extends React.Component {
@@ -14,10 +15,23 @@ class Login extends React.Component {
         //console.log("form", values)
 
         //对所有表单进行校验，得到所有表单数据，自定义表单必须callback（）
-        this.props.form.validateFields((err, values) => {
-            console.log(11111)
+        this.props.form.validateFields(async(err, values) => {
             if (!err) {
-              console.log('提交表单: ', values);
+                // login(values).then((res)=>{
+                //     if(res.status===0){
+                //         console.log("res",res)
+                //     }
+                // })
+
+
+                try{
+                    let res = await login(values)
+                    console.log('请求成功了',res.data)
+                }catch(error){
+                    console.log('请求出错了',error)
+                }
+
+
             }else{
                 console.log('校验失败')
             }
@@ -37,7 +51,7 @@ class Login extends React.Component {
                 </Header>
                 <Content className="login-content">
                     <Row className="cardSty">
-                        <Col span={10}></Col>
+                        <Col span={9}></Col>
                         <Col span={6}>
                             <Card title="用户登录" bordered={false} >
                                 <Form onSubmit={this.handleSubmit} className="login-form">
@@ -78,7 +92,7 @@ class Login extends React.Component {
                         </Col>
                     </Row>
                 </Content>
-                <Footer className="login-footer">Footer</Footer>
+                <Footer className="login-footer">React项目：后台管理系统</Footer>
             </Layout>
         )
     }

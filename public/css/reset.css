@@ -1,26 +1,4 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@nuanyue 
-jgthms
-/
-minireset.css
-1.2k
-39
-1.9k322
- Code Issues 2 Pull requests 2 Actions Projects 0 Wiki Security Insights
-minireset.css/minireset.css
-@jgthms jgthms Fix #18
-66b8b83 on 18 Oct 2019
-@jgthms@rch850@schliflo
-81 lines (71 sloc)  690 Bytes
-  
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+/*CSS Reset，意为重置默认样式,HTML中绝大部分标签元素在网页显示中都有一个默认属性值，通常为了避免重复定义元素样式，需要进行重置默认样式（CSS Reset）*/
 html,
 body,
 p,
