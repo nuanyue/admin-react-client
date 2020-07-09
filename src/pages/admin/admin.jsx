@@ -41,7 +41,7 @@ export default class Admin extends React.Component {
                             <Route path='/bar' component={Bar}></Route>
                             <Route path='/pie' component={Pie}></Route>
                             <Route path='/line' component={Line}></Route>
-                            <Redirect to="/"></Redirect>
+                            <Redirect to="/home"></Redirect>
                         </Switch>
                     </Content>
                     <Footer style={{textAlign:'center',color:'#cccccc'}}>React后台管理项目</Footer>
